@@ -1,0 +1,21 @@
+[package]
+name = "json"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.70"
+description = "Minimal RFC 8259 JSON parsing and serialization using only the Rust standard library."
+license = "MIT"
+repository = "https://github.com/nativelite/json-rs"
+keywords = ["json", "parser", "rfc8259", "zero-dependency", "nativelite"]
+categories = ["parser-implementations", "encoding"]
+
+# nativelite core rule: ZERO third-party dependencies. Do not add to this.
+[dependencies]
+
+[lib]
+name = "json"
+path = "src/lib.rs"
+
+[[bin]]
+name = "json"
+path = "src/main.rs"
