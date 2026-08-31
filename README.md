@@ -7,6 +7,10 @@ crate is the other end of the trade: a small `Value` enum, a strict
 spec-anchored parser with line/column errors, and compact + pretty
 serialization. Parse, inspect, serialize — done.
 
+## Philosophy
+
+See [nativelite-philosophy](https://github.com/nativelite/nativelite-philosophy) for the broader engineering standards and attack surface reduction strategy behind all nativelite packages.
+
 ## Usage
 
 ```rust
