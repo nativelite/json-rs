@@ -1,4 +1,4 @@
-//! Integration tests for `json` — anchored to RFC 8259 and the failure
+//! Integration tests for `json`, anchored to RFC 8259 and the failure
 //! classes catalogued by JSONTestSuite: a table of valid inputs with their
 //! exact compact serialization, a table of inputs that must be rejected,
 //! round-trip stability over the whole valid table, number-precision checks,
@@ -20,7 +20,7 @@ const VALID: &[(&str, &str)] = &[
     ("9223372036854775807", "9223372036854775807"),
     ("-9223372036854775808", "-9223372036854775808"),
     ("9007199254740993", "9007199254740993"), // 2^53 + 1, exact as i64
-    // floats — shortest round-trip formatting, ".0" kept on integral floats
+    // floats: shortest round-trip formatting, ".0" kept on integral floats
     ("3.14", "3.14"),
     ("0.5", "0.5"),
     ("-2.5e2", "-250.0"),
@@ -50,7 +50,7 @@ const VALID: &[(&str, &str)] = &[
     ("[ 1 , 2 ]", "[1,2]"),
     ("[[[]]]", "[[[]]]"),
     ("[null,true,\"x\",1.5]", "[null,true,\"x\",1.5]"),
-    // objects — order preserved, duplicates preserved
+    // objects: order preserved, duplicates preserved
     ("{}", "{}"),
     ("{ }", "{}"),
     ("{\"a\":1}", "{\"a\":1}"),
