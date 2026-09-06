@@ -5,7 +5,7 @@ Rust standard library. **Zero dependencies.**
 Rust's std has no JSON support; the usual answer is serde's crate tree. This
 crate is the other end of the trade: a small `Value` enum, a strict
 spec-anchored parser with line/column errors, and compact + pretty
-serialization. Parse, inspect, serialize — done.
+serialization. Parse, inspect, serialize, done.
 
 ## Philosophy
 
@@ -27,7 +27,7 @@ v.pretty(2);                              // indented, one member per line
 
 ## Design decisions, stated plainly
 
-- **Objects preserve order** — a vector of pairs, not a hash map. Duplicate
+- **Objects preserve order**: a vector of pairs, not a hash map. Duplicate
   keys survive parse → serialize; `get` returns the *last* occurrence,
   matching `JSON.parse`.
 - **Numbers**: `Number::Int(i64)` when the lexeme is integral and fits (so
@@ -42,7 +42,7 @@ v.pretty(2);                              // indented, one member per line
 
 ## What's deliberately out of scope
 
-- **Typed mapping / derive.** No serde replacement — you get a `Value` and
+- **Typed mapping / derive.** No serde replacement; you get a `Value` and
   walk it.
 - **Streaming / SAX.** The input is a complete text.
 - **Extensions.** No JSON5, no comments, no trailing commas. We parse RFC
@@ -50,7 +50,7 @@ v.pretty(2);                              // indented, one member per line
 
 ## Command line
 
-The crate ships a tiny `json` binary — validator and (pretty-)printer:
+The crate ships a tiny `json` binary, a validator and (pretty-)printer:
 
 ```bash
 some-llm-call | json            # pretty-print stdin
@@ -79,4 +79,4 @@ python dev.py guard   # zero-dependency guard
 
 `dev.py` is a stdlib-only runner, so `python dev.py check` is the same
 one-command local gate used across every nativelite package. The guard fails
-if `Cargo.toml` declares any dependency — runtime, build, or dev.
+if `Cargo.toml` declares any dependency: runtime, build, or dev.

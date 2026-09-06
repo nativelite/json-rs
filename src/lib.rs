@@ -1,10 +1,10 @@
-//! json — minimal RFC 8259 JSON parsing and serialization on the Rust
+//! json: minimal RFC 8259 JSON parsing and serialization on the Rust
 //! standard library alone. Zero dependencies.
 //!
 //! Rust's std has no JSON support; the usual answer is serde's crate tree.
 //! This crate is the other end of the trade: a small [`Value`] enum, a strict
 //! spec-anchored parser with line/column errors, and compact + pretty
-//! serialization. No derive, no typed mapping, no streaming — parse, inspect,
+//! serialization. No derive, no typed mapping, no streaming. Parse, inspect,
 //! serialize, done.
 //!
 //! ```
@@ -82,7 +82,7 @@ impl Value {
         }
     }
 
-    /// The value as `i64` — only for [`Number::Int`]; floats return `None`.
+    /// The value as `i64`, only for [`Number::Int`]; floats return `None`.
     pub fn as_i64(&self) -> Option<i64> {
         match self {
             Value::Number(Number::Int(i)) => Some(*i),
@@ -90,7 +90,7 @@ impl Value {
         }
     }
 
-    /// The value as `f64` — both int and float numbers.
+    /// The value as `f64`, for both int and float numbers.
     pub fn as_f64(&self) -> Option<f64> {
         match self {
             Value::Number(Number::Int(i)) => Some(*i as f64),
@@ -137,7 +137,7 @@ impl Value {
     }
 }
 
-/// Compact serialization — no whitespace.
+/// Compact serialization, no whitespace.
 impl fmt::Display for Value {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let mut out = String::new();

@@ -2,7 +2,7 @@
 //!
 //! Reads JSON from stdin; pretty-prints by default, `--compact` minifies,
 //! `--check` validates silently. Invalid input exits 1 with a line/column
-//! message on stderr — a drop-in validator for pipelines.
+//! message on stderr, a drop-in validator for pipelines.
 //!
 //! ```text
 //! some-llm-call | json            # pretty-print

@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.0] - 2026-08-28
 
 ### Added
-- `json::parse(&str) -> Result<Value, ParseError>` — strict RFC 8259 parser:
+- `json::parse(&str) -> Result<Value, ParseError>`, a strict RFC 8259 parser:
   rejects trailing commas, comments, single quotes, unquoted keys,
   `NaN`/`Infinity`, leading zeros, raw control characters, unpaired
   surrogates, and out-of-`f64`-range numbers; skips one leading BOM; bounds
